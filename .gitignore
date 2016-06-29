@@ -1,6 +1,7 @@
 # Specifies files to intentionally ignore when using Git
 # http://git-scm.com/docs/gitignore
 
+app/**.js
 node_modules/
 www/build/
 platforms/
