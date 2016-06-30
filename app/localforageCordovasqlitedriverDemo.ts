@@ -18,7 +18,7 @@ export function simpleTest() {
         localforage.LOCALSTORAGE
       ]);
     }).then(function() {
-      if ((localforage.driver() as any) as string !== cordovaSQLiteDriver._driver) {
+      if (localforage.driver() !== cordovaSQLiteDriver._driver) {
         console.log('Initial driver', localforage.driver());
         alert('Initial driver: '+ localforage.driver());
       }

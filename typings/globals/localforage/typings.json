@@ -1,8 +1,8 @@
 {
   "resolution": "main",
   "tree": {
-    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/048435315b27821c7935c9bfeecf00d125b0fa96/localForage/localForage.d.ts",
-    "raw": "registry:dt/localforage#0.0.0+20160626231258",
-    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/048435315b27821c7935c9bfeecf00d125b0fa96/localForage/localForage.d.ts"
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/1936f51e478dcd840d6a44f76402672a45cd9d1e/localForage/localForage.d.ts",
+    "raw": "registry:dt/localforage#0.0.0+20160629074517",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/1936f51e478dcd840d6a44f76402672a45cd9d1e/localForage/localForage.d.ts"
   }
 }
