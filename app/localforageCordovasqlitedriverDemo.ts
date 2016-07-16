@@ -1,9 +1,17 @@
-import * as localforageImport from 'localforage';
-import * as cordovaSQLiteDriverImport from 'localforage-cordovasqlitedriver';
-// import localForageImport = require('localforage');
-// import cordovaSQLiteDriverImport = require('localforage-cordovasqlitedriver');
-const localforage = (localforageImport as any) as LocalForage;
-const cordovaSQLiteDriver = (cordovaSQLiteDriverImport as any) as LocalForageDriver;
+declare var require: Function;
+
+const localforage:LocalForage = require('localforage');
+const cordovaSQLiteDriver:LocalForageDriver = require('localforage-cordovasqlitedriver');
+
+// or
+// import * as localforageImport from 'localforage';
+// or
+// import localforageImport = require('localforage');
+// and in both cases
+// const localforage:LocalForage = localforageImport as any;
+
+
+
 
 console.log(localforage, localforage.driver());
 console.log(cordovaSQLiteDriver, cordovaSQLiteDriver._driver);
