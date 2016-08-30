@@ -94,5 +94,5 @@ interface LocalForage {
 
 declare module "localforage" {
     var localforage: LocalForage;
-	export = localforage;
+    export = localforage;
 }
