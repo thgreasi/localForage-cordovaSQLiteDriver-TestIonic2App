@@ -1,17 +1,5 @@
-declare var require: Function;
-
-const localforage:LocalForage = require('localforage');
-const cordovaSQLiteDriver:LocalForageDriver = require('localforage-cordovasqlitedriver');
-
-// or
-// import * as localforageImport from 'localforage';
-// or
-// import localforageImport = require('localforage');
-// and in both cases
-// const localforage:LocalForage = localforageImport as any;
-
-
-
+import localforage = require('localforage');
+import cordovaSQLiteDriver = require('localforage-cordovasqlitedriver');
 
 console.log(localforage, localforage.driver());
 console.log(cordovaSQLiteDriver, cordovaSQLiteDriver._driver);
