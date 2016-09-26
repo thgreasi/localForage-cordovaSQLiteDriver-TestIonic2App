@@ -1,4 +1,4 @@
-import localforage = require('localforage');
+import * as localforage from 'localforage';
 import cordovaSQLiteDriver = require('localforage-cordovasqlitedriver');
 
 console.log(localforage, localforage.driver());
