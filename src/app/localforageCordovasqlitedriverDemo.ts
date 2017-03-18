@@ -1,25 +1,11 @@
-import localforage from 'localforage';
-import cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
-
-console.log(localforage, localforage.driver());
-console.log(cordovaSQLiteDriver, cordovaSQLiteDriver._driver);
+import { db as localforage } from './localforageConfig';
 
 export function simpleTest() {
   try {
-    localforage.defineDriver(cordovaSQLiteDriver).then(function() {
-      return localforage.setDriver([
-        cordovaSQLiteDriver._driver,
-        localforage.INDEXEDDB,
-        localforage.WEBSQL,
-        localforage.LOCALSTORAGE
-      ]);
-    }).then(function() {
-      if (localforage.driver() !== cordovaSQLiteDriver._driver) {
-        console.log('Initial driver', localforage.driver());
-        alert('Initial driver: '+ localforage.driver());
-      }
-      return localforage.setItem('testPromiseKey', 'testPromiseValue ' + (new Date()).toString());
-    }).then(function() {
+    console.log('Initial driver', localforage.driver());
+    alert('Initial driver: '+ localforage.driver());
+
+    localforage.setItem('testPromiseKey', 'testPromiseValue ' + (new Date()).toString()).then(function() {
       return localforage.getItem('testPromiseKey');
     }).then(function(value) {
       alert(localforage.driver() + ' getItem: ' + value);

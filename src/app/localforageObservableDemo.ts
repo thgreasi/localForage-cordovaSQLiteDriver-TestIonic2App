@@ -1,5 +1,4 @@
-import localForage from 'localforage';
-import cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
+import { db as localForage } from './localforageConfig';
 import { extendPrototype } from 'localforage-observable';
 import { Observable } from 'rxjs/Observable';
 
@@ -12,16 +11,7 @@ localforage.newObservable.factory = function (subscribeFn) {
 
 export function simpleObservableTest() {
   try {
-    localforage.defineDriver(cordovaSQLiteDriver).then(function() {
-      return localforage.setDriver([
-        cordovaSQLiteDriver._driver,
-        localforage.INDEXEDDB,
-        localforage.WEBSQL,
-        localforage.LOCALSTORAGE
-      ]);
-    }).then(function() {
-      return localforage.ready();
-    }).then(function() {
+    localforage.ready().then(function() {
       var observable = localforage.newObservable();
 
       var subscription = observable.subscribe({
