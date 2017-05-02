@@ -4,7 +4,7 @@ import cordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 console.log(localforage, localforage.driver());
 console.log(cordovaSQLiteDriver, cordovaSQLiteDriver._driver);
 
-export function simpleTest() {
+export function init() {
   try {
     localforage.defineDriver(cordovaSQLiteDriver).then(function() {
       return localforage.setDriver([
@@ -12,7 +12,9 @@ export function simpleTest() {
         localforage.INDEXEDDB,
         localforage.WEBSQL,
         localforage.LOCALSTORAGE
-      ]);
+      ]).then(function() {
+        console.log('setDriver:' + localforage.driver());
+      });
     }).catch(function(err) {
       alert(err);
       console.log(err);
@@ -22,5 +24,7 @@ export function simpleTest() {
     console.log(e);
   }
 }
+
+init();
 
 export var db = localforage;
