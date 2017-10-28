@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 
 import { simpleTest } from '../../app/localforageCordovasqlitedriverDemo';
 import { simpleObservableTest } from '../../app/localforageObservableDemo';
+import { simplePluralOperationsTest } from '../../app/localforagePluralOperationsDemo';
 
 @Component({
   selector: 'page-home',
@@ -20,7 +21,11 @@ export class HomePage {
   }
 
   testLocalForageObservable () {
-  	return simpleObservableTest();
+    return simpleObservableTest();
+  }
+
+  testLocalForagePluralOperations () {
+    return simplePluralOperationsTest();
   }
 
 }
